@@ -1,0 +1,11 @@
+# IG Publisher suppressed-messages file.
+# Each non-comment line is an exact message, or a %regex% pattern, to suppress in qa.html.
+
+# Benign: nl-core publishes no ImplementationGuide canonical of its own.
+%.*nictiz.fhir.nl.r4.nl-core/ImplementationGuide.*%
+
+# Benign: the BSN NamingSystem is a well-known national system not bundled in this IG.
+%.*http://fhir.nl/fhir/NamingSystem/bsn.*%
+
+# Benign: the History page links to the (versionless) canonical home page by design.
+%.*is a canonical link and is therefore unsafe with regard to versions.*%

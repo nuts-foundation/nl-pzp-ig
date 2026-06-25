@@ -11,8 +11,14 @@ Description: "Example patient with BSN identifier, used to illustrate the BSN-ba
 
 * name.use = #official
 * name.family = "van den Berg"
-* name.given = "Maria"
-* name.given[+] = "Anna"
+// nl-core-NameInformation requires each given part to carry the iso21090-EN-qualifier
+// extension (BR = given name, IN = initial).
+* name.given[0] = "Maria"
+* name.given[0].extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"
+* name.given[0].extension[0].valueCode = #BR
+* name.given[1] = "Anna"
+* name.given[1].extension[0].url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"
+* name.given[1].extension[0].valueCode = #BR
 
 * gender = #female
 * birthDate = "1985-03-15"
