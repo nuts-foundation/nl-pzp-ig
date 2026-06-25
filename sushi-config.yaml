@@ -47,6 +47,7 @@ pages:
 # The parameters property represents IG.definition.parameter.
 parameters:
   excludettl: true
+  path-suppressed-warnings: input/ignoreWarnings.txt
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │ The menu property will be used to generate the input/menu.xml file. Descriptive labels mirror  │
