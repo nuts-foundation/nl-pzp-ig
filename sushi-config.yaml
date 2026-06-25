@@ -1,0 +1,67 @@
+# ╭─────────────────────────Commonly Used ImplementationGuide Properties───────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. The most commonly   │
+# │  used properties are included. For a list of all supported properties and their functions,     │
+# │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: fhir.nl.pzp
+canonical: https://nuts-foundation.github.io/nl-pzp-ig
+url: https://nuts-foundation.github.io/nl-pzp-ig/ImplementationGuide/fhir.nl.pzp
+name: PZPIG
+title: Netherlands - Proactieve Zorgplanning (PZP) Implementation Guide
+language: en-US
+description: Self-contained implementation guide for exchanging Proactieve Zorgplanning (PZP) data in a small-scale pilot (<20 organisations). Reuses building blocks from the Zorginzage 2026 template.
+status: draft # draft | active | retired | unknown
+version: 0.1.0
+fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+copyrightYear: 2026+
+releaseLabel: draft # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+license: EUPL-1.2 # https://www.hl7.org/fhir/valueset-spdx-license.html
+jurisdiction: urn:iso:std:iso:3166#NL "Netherlands" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+publisher:
+  name: Stichting Nuts
+  url: https://www.nuts.nl
+  email: info@nuts.nl
+
+
+# The dependencies property corresponds to IG.dependsOn. The key is the
+# package id and the value is the version (or dev/current).
+dependencies:
+  nictiz.fhir.nl.r4.nl-core: 0.12.0-beta.4
+
+# The pages property corresponds to IG.definition.page. Descriptive page
+# titles are used deliberately instead of the opaque "Volume 2a"-style names.
+pages:
+  index.md:
+    title: Home
+  functional.md:
+    title: Use Case & Roles
+  exchange.md:
+    title: Exchange Architecture
+  transactions.md:
+    title: Transactions
+  dataset.md:
+    title: Dataset
+  history.md:
+    title: History
+
+# The parameters property represents IG.definition.parameter.
+parameters:
+  excludettl: true
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │ The menu property will be used to generate the input/menu.xml file. Descriptive labels mirror  │
+# │ the pages above.                                                                               │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  Home: index.html
+  Use Case & Roles: functional.html
+  Exchange Architecture: exchange.html
+  Transactions: transactions.html
+  Dataset: dataset.html
+  History: history.html
+
+# ╭──────────────────────────────────────────SUSHI flags───────────────────────────────────────────╮
+# │  The flags below configure aspects of how SUSHI processes FSH.                                 │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+instanceOptions:
+  manualSliceOrdering: true # true | false
