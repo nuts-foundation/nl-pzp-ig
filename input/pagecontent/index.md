@@ -60,5 +60,7 @@ for the role definitions.
 
 ### Support
 
-For support interpreting and implementing this specification, contact
-[Stichting Nuts](mailto:info@nuts.nl).
+For support interpreting and implementing this specification, join the
+[Nuts Foundation Slack](https://join.slack.com/t/nuts-foundation/shared_invite/zt-420yjjig5-FpyD6enK0egq2ZO5WJh6vQ).
+The **#acp** channel is the right place for questions about this PZP (Advance Care Planning) use
+case.
