@@ -1,11 +1,10 @@
-# IG Publisher suppressed-messages file.
-# Each non-comment line is an exact message, or a %regex% pattern, to suppress in qa.html.
+== Suppressed Messages ==
 
-# Benign: nl-core publishes no ImplementationGuide canonical of its own.
-%.*nictiz.fhir.nl.r4.nl-core/ImplementationGuide.*%
+# 01. The BSN NamingSystem is a well-known national system (http://fhir.nl/fhir/NamingSystem/bsn) that is not bundled in this IG.
+No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/bsn'
 
-# Benign: the BSN NamingSystem is a well-known national system not bundled in this IG.
-%.*http://fhir.nl/fhir/NamingSystem/bsn.*%
+# 02. nl-core does not publish an ImplementationGuide canonical of its own; the dependency resolves fine via its package.
+A definition could not be found for Canonical URL 'http://fhir.org/packages/nictiz.fhir.nl.r4.nl-core/ImplementationGuide/nictiz.fhir.nl.r4.nl-core'
 
-# Benign: the History page links to the (versionless) canonical home page by design.
-%.*is a canonical link and is therefore unsafe with regard to versions.*%
+# 03. The History page intentionally links to the versionless canonical home page.
+The link 'https://nuts-foundation.github.io/nl-pzp-ig/' for "Implementation Guide" is a canonical link and is therefore unsafe with regard to versions
