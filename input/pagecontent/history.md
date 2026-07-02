@@ -1,4 +1,17 @@
-### Version: 0.1.1 (current)
+### Version: 0.1.2 (current)
+
+- [Implementation Guide](https://nuts-foundation.github.io/nl-pzp-ig/)
+- [Source code](https://github.com/nuts-foundation/nl-pzp-ig)
+- [Compare to v0.1.1](https://github.com/nuts-foundation/nl-pzp-ig/compare/v0.1.1...v0.1.2)
+
+Significant changes:
+
+- Added an **Implementation** note to Person authentication — EmployeeID: the data user passes the
+  employee fields directly in the `request-service-access-token` call and the Nuts node places them
+  in the access-token claims (no HTML page rendered by the Nuts node), with links to the Nuts node
+  auth v2 API documentation and the Requesting Access wiki page.
+
+### Version: 0.1.1
 
 - [Implementation Guide](https://nuts-foundation.github.io/nl-pzp-ig/)
 - [Source code](https://github.com/nuts-foundation/nl-pzp-ig)
@@ -25,6 +38,6 @@ roadmap and release-policy chapters.
 
 <!-- Template for future entries:
 ### Version: 0.2.0
-- [Compare to v0.1.1](https://github.com/nuts-foundation/nl-pzp-ig/compare/v0.1.1...main)
+- [Compare to v0.1.2](https://github.com/nuts-foundation/nl-pzp-ig/compare/v0.1.2...main)
 - Significant changes:
 -->

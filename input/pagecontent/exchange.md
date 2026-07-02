@@ -124,6 +124,13 @@ its NEN 7513 audit logging obligations. This works today, independent of nationa
 > their details. Under the self-attested model the data user is trusted to have authenticated the
 > professional and checked the supplied fields.
 
+**Implementation.** The data user passes the employee fields directly in the
+`request-service-access-token` call; the Nuts node places them in the claims of the returned access
+token, so the application does not need to render an HTML page from its Nuts node to obtain the
+token. For the exact request/response shape and API details, see the
+[Nuts node auth v2 API documentation](https://nuts-node.readthedocs.io/en/stable/pages/integrating/api.html)
+and the [Requesting Access wiki page](https://wiki.nuts.nl/books/implementing-a-nuts-use-case-Ssg/page/requesting-access).
+
 #### Vendor authentication
 
 Vendor organisations are authenticated at the transport layer through mTLS; see
