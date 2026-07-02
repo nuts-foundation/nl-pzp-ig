@@ -91,7 +91,7 @@ makes it cryptographically verifiable without a separate issuer.
 
 > **Caveat: this is a workaround, not the desired end state.** Each vendor requests and manages a
 > separate certificate, which is costly and laborious and is not expected to scale past about 20
-> organisations. This is the main reason for the [versioning rule](index.html#status-and-scope).
+> organisations. This is the main reason for the [versioning rule](index.html#versioning-rule).
 
 #### Healthcare role type
 
@@ -103,20 +103,26 @@ proper issuer once one becomes available.
 #### Person authentication — EmployeeID
 
 The healthcare professional's identity is federated from the data user to the data holder by
-including a NutsEmployeeCredential in the access-token request. The professional is identified by a
+including a `NutsEmployeeCredential` in the access-token request. The professional is identified by a
 local employee identifier (the "EmployeeID"), with local name and role as non-identifying
 attributes.
 
 - Data users **MUST** federate healthcare professional identity using a `NutsEmployeeCredential`
   (see the request body in [Transactions](transactions.html#pull)).
 
-The professional's identifying information is needed at the data holder for NEN 7513 audit logging,
-which the NutsEmployeeCredential carries, and it can be used now independent of national
-initiatives (e.g. Dezi) that are not yet in place.
+The `NutsEmployeeCredential` is **self-attested** by the data user's system, in line with the
+[Zorginzage authentication approach](https://build.fhir.org/ig/nuts-foundation/nl-zorginzage-ig/vol2a.html#authentication)
+(Nuts v6). The data user's application authenticates the professional in its own user session and
+populates the credential fields (name, role, identifier) from that session. The data user's system
+**MUST** supply these fields and is expected to have verified them, so that the data holder can meet
+its NEN 7513 audit logging obligations. This works today, independent of national initiatives
+(e.g. Dezi) that are not yet in place.
 
-> **Caveat: the user experience is limited.** The EmployeeID interaction (and its pop-up) is
-> accepted for this pilot, but improving or removing it is a likely change before a larger-scale
-> pilot.
+> **No interactive challenge.** The credential is built from the data user's own authenticated
+> session; there is explicitly **no** HTML challenge or pop-up. This differs from the previous
+> Nuts v5 employee identity means (RFC019), which hosted a web page for the professional to confirm
+> their details. Under the self-attested model the data user is trusted to have authenticated the
+> professional and checked the supplied fields.
 
 #### Vendor authentication
 

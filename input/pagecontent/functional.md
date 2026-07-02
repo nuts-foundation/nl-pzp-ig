@@ -49,8 +49,11 @@ implementeren. Welke partij welke rol(len) vervult in deze pilotpropositie staat
 
 ### Functionele flows
 
-> Open punt (nog te specificeren). De precieze functionele flows worden nog uitgewerkt. Hier wordt
-> beschreven wat binnen de scope van deze pilot met de genoemde leveranciers werkt, en wat nog niet.
+Deze gids beschrijft nadrukkelijk **niet** de medische workflows en zorgprotocollen rondom
+proactieve zorgplanning. Wanneer en hoe zorgverleners PZP-informatie vastleggen, opvragen en
+gebruiken, is aan de regio, de deelnemende organisaties en de zorgverleners zelf om in te vullen en
+te bepalen. Deze gids is uitsluitend gescoped op de technische middelen — wat beschikbaar is en hoe
+het werkt — en niet op hoe het gebruikt moet worden.
 
 Op hoofdlijnen verloopt de gerichte raadpleging als volgt (de technische uitwerking staat in
 [Exchange Architecture](exchange.html) en [Transactions](transactions.html)):
@@ -64,10 +67,3 @@ Op hoofdlijnen verloopt de gerichte raadpleging als volgt (de technische uitwerk
 4. De datahouder autoriseert de vraag, controleert de vereiste toestemming en levert de
    PZP-gegevens.
 5. De datagebruiker toont de gegevens aan de zorgverlener.
-
-Nog uit te werken voor de pilot:
-
-- welke leverancier in welke rol (vastleggen/beschikbaarstellen dan wel raadplegen/tonen) aan welke
-  stap deelneemt;
-- welke PZP-gegevens per bronsysteem beschikbaar zijn (zie de open punten in [Dataset](dataset.html));
-- hoe de lokale lijst van mogelijke datahouders bij de datagebruiker tot stand komt.

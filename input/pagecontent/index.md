@@ -14,10 +14,18 @@ or planning. The architectural choices are made for what is practical and usable
 which is why the guide is versioned 0.1.0 rather than 1.0. The guiding principle is to reuse the
 building blocks that already exist.
 
-> Versioning rule. This specification is dimensioned for a pilot of fewer than 20 organisations.
-> When the scope grows beyond 20 organisations, a new version is created, because some of the
-> choices below — in particular organisation authentication via X509 certificates — are not
-> expected to scale past that threshold.
+This guide is scoped to the technical means of exchange — what is available and how it works, not
+how to use it. It does **not** prescribe the medical workflows or care protocols around Proactieve
+Zorgplanning; when
+and how professionals record, request and use PZP information is for the region, the participating
+organisations and the practitioners themselves to fill in and decide.
+
+#### Versioning rule
+
+> This specification is dimensioned for a pilot of fewer than 20 organisations. When the scope grows
+> beyond 20 organisations, a new version is created, because some of the choices below — in
+> particular organisation authentication via X509 certificates — are not expected to scale past that
+> threshold.
 
 ### Relationship to the Zorginzage specification
 
