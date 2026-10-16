@@ -217,6 +217,15 @@ The policy **MUST** take the following into account:
   patient.
 - Explicit patient consent **MUST** be checked before returning data (see [Consent](#consent)).
 
+> **Implementation note — URA check.** The data holder does not need to do a manual check for the
+> URA. The Nuts node already enforces it when it issues the access token: the Nuts policy
+> definition (presentation definition) for the PZP scope requires an `X509Credential` that is
+> derived from a UZI server certificate, so the issuer must chain to the UZI CA. Without this
+> credential, the data user gets no access token. The data holder only configures the commonly
+> defined PZP policy definition on its Nuts node. The URA then appears as the `organization_ura`
+> claim in the token introspection result, and the Rego policy checks that this claim is present
+> as defence in depth.
+
 ### Consent
 
 Consent verification is part of the authorisation decision for PZP. The data holder checks that a
@@ -240,7 +249,13 @@ identifier.
 
 In production and acceptance environments, vendor organisations **MUST** use server- and
 client-authentication (mutual TLS) based on PKIoverheid certificates. In test environments,
-PKIoverheid certificates or public-trust certificates **MUST** be used.
+PKIoverheid certificates or certificates issued under the self-signed
+[Nuts Stable Development Network Root CA G2](https://github.com/nuts-foundation/nuts-development-network-ca)
+**MUST** be used.
+
+Public-trust certificates **MUST NOT** be used for mTLS. Public CAs are phasing out client
+authentication in their certificates (the date differs per CA; several stop in early 2027). Other
+Nuts use cases already use the Nuts Stable Development Network Root CA G2 for test environments.
 
 The national specifications for network security ("Veilig Netwerk") are not yet finalised; the
 current concept version prescribes PKIoverheid certificates, which are already widely in use by

@@ -1,4 +1,20 @@
-### Version: 0.1.2 (current)
+### Version: 0.1.3 (current)
+
+- [Implementation Guide](https://nuts-foundation.github.io/nl-pzp-ig/)
+- [Source code](https://github.com/nuts-foundation/nl-pzp-ig)
+- [Compare to v0.1.2](https://github.com/nuts-foundation/nl-pzp-ig/compare/v0.1.2...v0.1.3)
+
+Significant changes:
+
+- Authorisation: added an implementation note that the URA check needs no manual action by the
+  data holder. The Nuts policy definition for the PZP scope requires an `X509Credential` derived
+  from a UZI server certificate, so the Nuts node enforces it at token issuance; the Rego check on
+  `organization_ura` is defence in depth.
+- Network security: test environments use PKIoverheid certificates or the Nuts Stable Development
+  Network Root CA G2. Public-trust certificates are no longer allowed for mTLS, because public CAs
+  are phasing out client authentication (several in early 2027).
+
+### Version: 0.1.2
 
 - [Implementation Guide](https://nuts-foundation.github.io/nl-pzp-ig/)
 - [Source code](https://github.com/nuts-foundation/nl-pzp-ig)
@@ -38,6 +54,6 @@ roadmap and release-policy chapters.
 
 <!-- Template for future entries:
 ### Version: 0.2.0
-- [Compare to v0.1.2](https://github.com/nuts-foundation/nl-pzp-ig/compare/v0.1.2...main)
+- [Compare to v0.1.3](https://github.com/nuts-foundation/nl-pzp-ig/compare/v0.1.2...main)
 - Significant changes:
 -->
